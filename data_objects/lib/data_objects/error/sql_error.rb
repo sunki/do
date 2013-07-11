@@ -16,7 +16,7 @@ module DataObjects
     end
 
     def to_s
-      "#{message} (code: #{code}, sql state: #{sqlstate}, query: #{query}, uri: #{uri})"
+      "#{message.force_encoding("UTF-8")} (code: #{code}, sql state: #{sqlstate}, query: #{query.force_encoding("UTF-8")}, uri: #{uri})"
     end
   end
 end
